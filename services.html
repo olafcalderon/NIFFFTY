@@ -201,6 +201,27 @@
           <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Ultim8.</h2>
+
+              <div id="paypal-button-container"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AZb5IYhmZl5OdWgVyeRI4xcvYZWeK7lQ74FGjBncMdSCjYB88_F8Kde66385PG8d-JPyOoVU3wxTEXll&vault=true" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'black',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          'plan_id': 'P-6HR41826AA1821621L5UUZTY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID);
+      }
+  }).render('#paypal-button-container');
+</script>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             </div>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
